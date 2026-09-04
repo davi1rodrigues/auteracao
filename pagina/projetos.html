@@ -1,239 +1,104 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meus Projetos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/davi.png">
-  <style>
-    :root {
-      --primary: #730202;
-      --accent: #e50914;
-      --light: #ffffff;
-      --dark: #333;
-      --font: 'Montserrat', sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font);
-      background: #f0f0f0;
-      color: var(--dark);
-    }
-
-    header {
-      background-color: var(--primary);
-      color: var(--light);
-      padding: 1rem 1rem;
-    }
-
-    header div {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    
-    .logo {
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      padding: 0;
-      margin-top: 0.5rem;
-    }
-
-    nav ul li a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: var(--accent);
-    }
-
-    .banner {
-      background: center/cover no-repeat;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .banner::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    .banner h1 {
-      position: relative;
-      color: white;
-      font-size: 2.5rem;
-      z-index: 1;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-
-    .projects-container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 0 1.5rem;
-    }
-
-    .card {
-      background: var(--light);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--primary);
-      font-size: 1.3rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      margin: 0.75rem 0 1.25rem;
-      flex: 1;
-    }
-
-    .card a {
-      text-decoration: none;
-      background: var(--accent);
-      color: var(--light);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      text-align: center;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-
-    .card a:hover {
-      background: #c40810;
-    }
-
-    footer {
-      background-color: var(--primary);
-      color: var(--light);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 600px) {
-      .banner h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo">Ensino Médio <strong>senac</strong></div>
-    <nav>
-      <ul>
-        <li><a href="/index.html">Início</a></li>
-        <li><a href="/pagina/sobremim.html">Sobre Mim</a></li>
-        <li><a href="/pagina/projetos.html">Projetos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="/pagina/erro.html">Portal da Turma</a></li>
-        <li><a href="/pagina/erro.html">Quiz Interativo</a></li>
-      </ul>
-    </nav>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Projetos | Davi Gabriel</title>
+    <link rel="icon" type="image/png" href="../davi.png">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html">Davi Gabriel <span>· Portfólio</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <ul>
+          <li>
+            <a href="../index.html">Início</a>
+          </li>
+          <li>
+            <a href="sobremim.html">Sobre mim</a>
+          </li>
+          <li>
+            <a href="projetos.html" aria-current="page">Projetos</a>
+          </li>
+          <li>
+            <a href="contato.html">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
-  <div class="banner">
-    <h1>Meus Projetos</h1>
-  </div>
-
-  <main class="projects-container">
-    <div class="card">
-      <h3>Projeto 1: Mapa de Praças</h3>
-      <p>Plataforma para visualizar praças acessíveis da cidade com base na ODS 11.7.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3>Projeto 2: Fotos laliga</h3>
-      <p>Apenas fotos da logo da laliga.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3>Projeto 3: Bateras Shop</h3>
-      <p>Site desenvolvido para vendas de baterias e acessórios relacionados ao instrumento.</p>
-      <a href="/bateras/bateras.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3>Projeto 4: Frey Clima</h3>
-      <p>Aqui temos um site para instalações, raparos, limpezas e outras coisas relacionadas a isso, também para vendas de ar condicionado.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3>Projeto 5: Aí Rango</h3>
-      <p>Site de delivery de comida, ainda em desenvolvimento.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3>Projeto 6: Java 1</h3>
-      <p>Primeira aplicação de Java script.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-      <div class="card">
-      <h3>Projeto 7: Java 2</h3>
-      <p>Segunda aplicação do Java script.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3>Projeto 8: Desafio Java</h3>
-      <p>Desafio em Java script.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-
-    <div class="card">
-      <h3> Projeto 9: Homenagem para minha familia</h3>
-      <p> Aqui temos uma pagina sobre a minha familia.</p>
-      <a href="/pagina/erro.html">Ver Projeto</a>
-    </div>
-    </main>
-
-  <footer>
-    <p>&copy; 2025 Davi Gabriel Rodrigues.</p>
+  <main>
+    <section class="page-intro">
+      <div class="page-intro-inner">
+        <p class="eyebrow">Portfólio escolar</p>
+        <h1 class="page-title">Meus projetos</h1>
+        <p>Trabalhos criados durante as aulas e desafios de Desenvolvimento Web.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card">
+          <span class="card-label">01 · ODS 11.7</span>
+          <h3>Mapa de Praças</h3>
+          <p>Plataforma para visualizar praças acessíveis da cidade.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">02 · Galeria</span>
+          <h3>Fotos LaLiga</h3>
+          <p>Página de imagens inspirada na identidade visual da LaLiga.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">03 · E-commerce</span>
+          <h3>Bateras Shop</h3>
+          <p>Loja de baterias e acessórios relacionados ao instrumento.</p>
+          <a class="button" href="../bateras/bateras.html">Acessar site</a>
+        </article>
+        <article class="card">
+          <span class="card-label">04 · Serviços</span>
+          <h3>Frey Clima</h3>
+          <p>Site para instalação, reparo e limpeza de ar-condicionado.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">05 · Em construção</span>
+          <h3>Aí Rango</h3>
+          <p>Projeto de delivery de comida, ainda em desenvolvimento.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">06 · JavaScript</span>
+          <h3>Java 1</h3>
+          <p>Primeira aplicação criada para praticar JavaScript.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">07 · JavaScript</span>
+          <h3>Java 2</h3>
+          <p>Segunda aplicação desenvolvida com JavaScript.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">08 · Desafio</span>
+          <h3>Desafio Java</h3>
+          <p>Exercício para colocar em prática conhecimentos de JavaScript.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+        <article class="card">
+          <span class="card-label">09 · Homenagem</span>
+          <h3>Minha família</h3>
+          <p>Uma página especial dedicada à minha família.</p>
+          <a class="button" href="erro.html">Ver projeto</a>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© 2025 <strong>Davi Gabriel Rodrigues</strong> · Projeto acadêmico</p>
   </footer>
-
 </body>
 </html>
