@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow"><title>Painel da loja | Batera's</title>
+  <link rel="icon" type="image/png" href="bateraslogo.png"><link rel="stylesheet" href="bateras.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="bateras.html">Batera's <span>· Administração</span></a><nav class="site-nav"><ul><li><a href="bateras.html">Ver loja</a></li><li><a href="produtos.html">Catálogo</a></li></ul></nav></div></header>
+  <main><section class="page-banner"><div class="page-banner-inner"><p class="eyebrow">Área restrita</p><h1>Painel de produtos</h1><p>Cadastre e mantenha o catálogo da loja atualizado.</p></div></section>
+    <section class="content-section admin-area">
+      <div id="config-notice" class="contact-card contact-card--highlight" hidden><h2>Configure o banco para ativar o painel</h2><p>Configure MySQL em <code>api/config.php</code> e importe <code>mysql-schema.sql</code> no phpMyAdmin.</p></div>
+      <div id="dashboard" hidden>
+        <div class="admin-toolbar"><div><p class="eyebrow">Gerenciamento</p><h2>Seus produtos</h2></div><button id="logout" class="button button--outline" type="button">Sair</button></div>
+        <form id="product-form" class="contact-card product-form">
+          <h2 id="form-title">Adicionar produto</h2><input id="product-id" type="hidden">
+          <div class="form-grid"><div><label for="title">Nome do produto</label><input id="title" maxlength="100" required></div><div><label for="category">Categoria</label><input id="category" maxlength="50" placeholder="Baterias, pratos, acessórios" required></div>
+          <div><label for="price">Preço (R$)</label><input id="price" type="number" min="0" step="0.01" required></div><div><label for="photo">Foto do produto</label><input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></div></div>
+          <label for="description">Descrição</label><textarea id="description" maxlength="1000"></textarea>
+          <label class="check-row"><input id="active" type="checkbox" checked> Publicado no catálogo</label>
+          <div class="form-actions"><button class="button" type="submit">Salvar produto</button><button id="cancel-edit" class="button button--outline" type="button" hidden>Cancelar edição</button></div><p id="form-message" role="status"></p>
+        </form>
+        <div id="admin-products" class="admin-products" aria-live="polite"></div>
+      </div>
+    </section>
+  </main><footer class="site-footer"><p>© 2026 <strong>Batera's Drum Shop</strong> · Painel privado</p></footer>
+  <script type="module" src="admin.js"></script>
+</body></html>
